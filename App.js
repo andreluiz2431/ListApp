@@ -92,6 +92,7 @@ export default function App() {
   }
 
   async function favoriteTask(item) {
+    // fazendo
     setIsFavoring(item);
     setNameFav(item.name);
     setAddressFav(item.address);
