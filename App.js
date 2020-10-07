@@ -92,11 +92,13 @@ export default function App() {
   }
 
   async function favoriteTask(item) {
-    //setIsFavoring(item);
-    //setNameFav(item.name);
-    //setAddressFav(item.address);
-    //const tempTaskFav = task.filter((tasks) => tasks !== isFavoring);
-    //setTask([{ name: nameFav, address: addressFav }, ...tempTaskFav]);
+    setIsFavoring(item);
+    setNameFav(item.name);
+    setAddressFav(item.address);
+
+    const tempTaskFav = task.filter((tasks) => tasks !== isFavoring);
+
+    setTask([{ name: item.name, address: item.address }, ...tempTaskFav]);
   }
 
   useEffect(() => {
