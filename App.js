@@ -35,8 +35,6 @@ export default function App() {
   const [isEditing, setIsEditing] = useState({});
 
   const [isFavoring, setIsFavoring] = useState({});
-  const [nameFav, setNameFav] = useState('');
-  const [addressFav, setAddressFav] = useState('');
 
   async function addTask() {
     if (newAddress !== '' || newName !== '') {
@@ -94,12 +92,15 @@ export default function App() {
   async function favoriteTask(item) {
     // fazendo
     setIsFavoring(item);
-    setNameFav(item.name);
-    setAddressFav(item.address);
 
     //const tempTaskFav = task.filter((tasks) => tasks !== isFavoring);
+    const esta = task.indexOf(item);
+    const vai = 0;
+    const tempTaskFav = task;
+    tempTaskFav.splice(vai, 0, tempTaskFav.splice(esta, 1)[0]);
 
     //setTask([{ name: item.name, address: item.address }, ...tempTaskFav]);
+    setTask([...tempTaskFav]);
   }
 
   useEffect(() => {
