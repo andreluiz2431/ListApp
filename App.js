@@ -97,9 +97,9 @@ export default function App() {
     setNameFav(item.name);
     setAddressFav(item.address);
 
-    const tempTaskFav = task.filter((tasks) => tasks !== isFavoring);
+    //const tempTaskFav = task.filter((tasks) => tasks !== isFavoring);
 
-    setTask([{ name: item.name, address: item.address }, ...tempTaskFav]);
+    //setTask([{ name: item.name, address: item.address }, ...tempTaskFav]);
   }
 
   useEffect(() => {
@@ -166,7 +166,7 @@ export default function App() {
   async function infoTask(item) {
     Alert.alert(
       item.name,
-      `Info: ${item.address}`,
+      `${item.address}`,
       [
         {
           text: 'OK',
@@ -205,13 +205,13 @@ export default function App() {
                     <Text style={styles.Texto}>{item.name}</Text>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() => favoriteTask(item)}>
-                    <MaterialIcons name="star" size={25} color="#FF8C00" />
+                    <MaterialIcons name="star" size={25} color="#3E045C" />
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() => editTask(item)}>
-                    <MaterialIcons name="edit" size={25} color="#FF8C00" />
+                    <MaterialIcons name="edit" size={25} color="#3E045C" />
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() => removeTask(item)}>
-                    <MaterialIcons name="delete" size={25} color="#FF8C00" />
+                    <MaterialIcons name="delete" size={25} color="#3E045C" />
                   </TouchableOpacity>
                 </View>
               );
@@ -244,14 +244,14 @@ export default function App() {
                 style={styles.InputButton}
                 onPress={() => setModalVisible(false)}
               >
-                <Ionicons name="ios-close" size={24} color="#FFF" />
+                <Ionicons name="ios-close" size={24} color="#E5E3E6" />
               </TouchableOpacity>
 
               <TouchableOpacity
                 style={styles.InputButton}
                 onPress={() => updateTask()}
               >
-                <Ionicons name="ios-checkmark" size={24} color="#FFF" />
+                <Ionicons name="ios-checkmark" size={24} color="#E5E3E6" />
               </TouchableOpacity>
             </View>
           </Dialog>
@@ -261,7 +261,7 @@ export default function App() {
               style={styles.ButtonAdd}
               onPress={() => openModal()}
             >
-              <Ionicons name="ios-add" size={35} color="#FF8C00" />
+              <Ionicons name="ios-add" size={35} color="#3E045C" />
             </TouchableOpacity>
           </View>
         </View>
@@ -301,7 +301,7 @@ export default function App() {
                 style={styles.InputButton}
                 onPress={() => addTask()}
               >
-                <Ionicons name="ios-send" size={24} color="#FFF" />
+                <Ionicons name="ios-send" size={24} color="#E5E3E6" />
               </TouchableOpacity>
             </View>
           </View>
